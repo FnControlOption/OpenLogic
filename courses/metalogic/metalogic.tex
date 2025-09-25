@@ -1,0 +1,92 @@
+% metalogic.tex
+%
+% driver file metalogic.tex to produce textbook
+
+\documentclass[screen]{../../sty/open-logic-book}
+
+% Metadata
+\setOLPbooktitle{The Power and Limits of First-Order Logic}
+\setOLPbooksubtitle{\href{http://openlogicproject.org/}{Open Logic Project}}
+\setOLPauthor{Rohan French}
+\setOLPauthorlink{https://rohan-french.github.io}
+
+\definecolor{OLPcolor}{RGB}{255, 155, 5}
+\definecolor{OLPdkcolor}{RGB}{105, 75, 15}
+\colorlet{OLPltcolor}{OLPcolor!45}
+
+% \olpath has to point to the location of the OLP main
+% directory/folder.  We're compiling from subdirectory courses/metalogic,
+% so the main directory is two levels up.
+\newcommand{\olpath}{../../}
+
+% load all the Open Logic definitions. This will also load the
+% local definitions in metalogic-config.sty
+\input{\olpath/sty/open-logic.sty}
+
+% we want all the problems deferred to the end
+\input{\olpath/sty/open-logic-defer.sty}
+
+\begin{document}
+
+% First we make a titlepage
+
+\begin{titlingpage}
+\begin{raggedleft}
+\fontsize{52pt}{2em}\selectfont\bfseries\sffamily
+\OLPbooktitle
+\vskip 4ex
+\normalfont\Huge\textbf{\OLPbooksubtitle}
+
+\end{raggedleft}
+
+\vfill
+
+% oluselicense generates a license mark that a) licenses the result
+% under a CC-BY licence and b) acknowledges the original source (the
+% OLP).  Acknowledgment of the source is a requirement under the
+% conditions of the CC-BY license used by the OLP, but you are not
+% required to license the product itself under CC-BY.
+
+\oluselicense
+% Title of this version of the OLT
+{\textit{\OLPbooktitle}}
+% Author of this version
+{\href{\OLPauthorlink}{\OLPauthor}}
+\end{titlingpage}
+
+\problemsperchapter
+\allowdisplaybreaks
+
+\frontmatter
+
+\tableofcontents*
+
+\mainmatter
+
+% olimport includes an entire part
+
+\olimport*[sets-functions-relations]{sets-functions-relations}
+
+\olimport*[first-order-logic]{first-order-logic}
+
+\olimport*[model-theory]{model-theory}
+
+\olimport*[second-order-logic]{second-order-logic}
+
+% Ok, that's it. Now for the appendices
+
+\appendix
+
+\olimport*[methods]{methods}
+
+\olimport*[history/biographies]{biographies}
+
+\backmatter
+
+% Include the bibliography
+
+\bibliographystyle{\olpath/bib/natbib-oup}
+\bibliography{\olpath/bib/open-logic}
+
+\end{document}
+

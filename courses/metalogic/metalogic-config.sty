@@ -1,0 +1,30 @@
+% Let's be unpretentious and use A, B, C, etc. for formulas ...
+
+\ollatinformulas
+
+% ... and use bold italic instead of Fraktur for structures
+
+\DeclareMathAlphabet{\mathbi}{OT1}{pplx}{b}{it}
+
+\DeclareDocumentCommand \Struct { m }{\applytofirst{\mathbi}{#1}}
+
+
+\settexttoken{enumerable}{countable}{countable}
+
+\settexttoken{nonenumerable}*{uncountable}{uncountable}
+
+\settexttoken{denumerable}{countably infinite}{countably infinite}
+
+% make biconditional, verum defined
+
+\tagtrue{defIff,defTrue}
+\tagfalse{prvIff,prvTrue}
+
+% cases for conditional, universal quantifier left to reader
+
+\tagtrue{probAnd,probIf,probAll}
+
+% do just axiomatic derivation
+
+\tagtrue{prfAX}
+\tagfalse{prfSC,prfND,prfTab}

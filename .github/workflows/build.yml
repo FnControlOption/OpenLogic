@@ -12,9 +12,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: open-logic-debug.tex
-      - name: Upload open-logic-debug.pdf
+          working_directory: courses/metalogic
+          root_file: metalogic.tex
+      - name: Upload metalogic.pdf
         uses: actions/upload-artifact@master
         with:
-          name: open-logic-debug.pdf
-          path: open-logic-debug.pdf
+          name: metalogic.pdf
+          path: courses/metalogic/metalogic.pdf
